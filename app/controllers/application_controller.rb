@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
     else
       @user = User.new(name: params["username"], password: params["password"])
       @session = session
-      @session[:id] = @user.id
+      @session[:user_id] = @user.id
       redirect '/account'
     end
   end
